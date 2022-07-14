@@ -1,0 +1,14 @@
+@use "../app-theme";
+@use "@angular/material" as mat;
+
+$ng-xmp-primary: mat.define-palette(mat.$blue-palette, 700, 600, 800);
+$ng-xmp-accent: mat.define-palette(mat.$red-palette, 700, 600, 800);
+$ng-xmp-warn: mat.define-palette(mat.$red-palette);
+$ng-xmp-theme: mat.define-light-theme(
+  $ng-xmp-primary,
+  $ng-xmp-accent,
+  $ng-xmp-warn
+);
+
+@include mat.all-component-themes($ng-xmp-theme);
+@include app-theme.theme($ng-xmp-theme);

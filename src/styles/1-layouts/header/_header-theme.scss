@@ -1,0 +1,23 @@
+@use "sass:map";
+@use "../../constants";
+@use "../../mixins";
+@use "@angular/material" as mat;
+
+@mixin theme($theme) {
+  $primaryColor: mat.get-color-from-palette(map.get($theme, primary));
+  $primaryColorDarker: mat.get-color-from-palette(
+    map.get($theme, primary),
+    darker
+  );
+  $is-dark-theme: map.get($theme, is-dark);
+
+  .header {
+    background: if($is-dark-theme, $primaryColorDarker, $primaryColor);
+
+    .title {
+      p {
+        color: white;
+      }
+    }
+  }
+}

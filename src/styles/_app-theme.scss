@@ -1,0 +1,7 @@
+@use "0-base/typography-theme";
+@use "1-layouts/theme" as layout-themes;
+
+@mixin theme($theme) {
+  @include typography-theme.theme($theme);
+  @include layout-themes.theme($theme);
+}
